@@ -1,0 +1,168 @@
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{amssymb} % for ✔
+\usepackage{pifont}  % for more checkmarks
+
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}  % Clear default headers/footers
+
+
+\rhead{Final Year Project Proposal}
+\lhead{Department of Computer Science}
+% \cfoot{\thepage}
+\cfoot{\shortstack{\thepage \\ Template developed by Yaduvanshi Ankit. Cite the following when using this template:  \\ \url{https://github.com/YaduvanshiAnkitOfficial/ProjectProposalTemplate}}}
+
+
+\titleformat{\section}{\large\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\normalsize\itshape}{\thesubsubsection.}{1em}{}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+
+    {\LARGE \bfseries \textcolor{red}{DISSERTATION TOPIC}}\\[2cm]
+
+    \textit{Thesis Proposal submitted by}\\[0.5cm]
+    {\bfseries \textcolor{red}{Student Name}}\\
+    {\bfseries \textcolor{red}{Uni Roll Number}}\\[1cm]
+
+    \textit{under the guidance of}\\[0.35cm]
+    {\bfseries Mr. Ankit Kumar, Lakshmibai College, University of Delhi}\\[1.2cm]
+
+    \textit{in partial fulfilment of the requirements}\\
+    \textit{for the award of the degree of}\\[0.5cm]
+
+    {\bfseries Bachelor of Arts (Computer Science Major)}\\[1.5cm]
+
+
+    \begin{figure}[h]
+        \centering
+        \begin{minipage}[r]{0.245\textwidth}
+            \centering
+            \includegraphics[height=1.56in, width=1.56in, keepaspectratio]{lbc-latest-logo PNG.png}
+        \end{minipage}%
+        \begin{minipage}[l]{0.245\textwidth}
+            \centering
+            \includegraphics[height=1.78in, width=1.78in, keepaspectratio]{DU Logo2.png}
+        \end{minipage}
+    \end{figure}
+
+
+    \vspace{1.5cm}
+
+    {\large \textbf{Department Of \textcolor{red}{Computer Science}}}\\[0.5cm]
+    {\large \textbf{LAKSHMIBAI COLLEGE, UNIVERSITY OF DELHI}}\\[0.5cm]
+    {\large \textcolor{red}{June 2025}}
+
+\end{titlepage}
+
+
+\tableofcontents
+\newpage
+
+\section{Abstract}
+This project proposes a novel deep learning model that integrates intent detection with multi-hop reasoning over knowledge graphs to enhance conversational recommendation systems. Leveraging recent advancements in NLP and graph neural networks, the system aims to understand user queries more effectively and recommend items through contextual and multi-relational understanding.
+
+\section{Problem Statement}
+Current conversational recommender systems struggle to handle ambiguous user intents and lack deep semantic reasoning capabilities. This project addresses the challenge of intent understanding and multi-hop reasoning over KGs in a unified NLP pipeline.
+
+\section{Introduction}
+Conversational recommendation has emerged as a practical approach for user engagement, particularly with the rise of LLMs. However, systems need to combine intent-awareness with semantic reasoning for better performance. This work integrates intent-aware models with graph traversal mechanisms for explainable recommendations.
+
+\section{Literature Review}
+Recent works such as KBRD, TG-ReDial, and Conversational KGAT have shown promising results by combining graph reasoning and NLP techniques. However, these models often underperform in low-resource and ambiguous intent settings. Multi-hop reasoning over KGs and fine-tuned NER/intent detection are proposed as improvements.
+
+\section{Aim and Objectives}
+\subsection{Aim}
+To develop an intent-aware multi-hop recommendation model using NLP and Knowledge Graphs.
+\subsection{Objectives}
+\begin{itemize}
+    \item To detect user intents using a transformer-based model.
+    \item To perform multi-hop reasoning over the KG using Graph Attention Networks.
+    \item To evaluate recommendation relevance and interpretability.
+\end{itemize}
+
+\section{Methodology}
+The system comprises three modules: (i) intent detection using BERT, (ii) multi-hop reasoning using GAT on KG, and (iii) ranking via scoring function. The model is trained using cross-entropy loss on dialogue-level recommendation datasets like ReDial, with knowledge from DBpedia.
+
+\section{Expected Outcomes}
+The system is expected to show improved recommendation relevance, better handling of ambiguous intents, and enhanced interpretability through reasoning path visualization.
+
+\section{Schedule of Activities}
+\begin{longtable}{|
+    p{6cm}|                                         % Left-aligned first column
+    >{\centering\arraybackslash}p{1cm}|             % Center-aligned columns
+    >{\centering\arraybackslash}p{1cm}|
+    >{\centering\arraybackslash}p{1cm}|
+    >{\centering\arraybackslash}p{1cm}|
+    >{\centering\arraybackslash}p{1cm}|
+}
+
+\hline
+\textbf{Task} & \textbf{Aug} & \textbf{Sep} & \textbf{Oct} & \textbf{Nov} & \textbf{Dec} \\
+\hline
+Literature Review & \checkmark &  &  &  &  \\
+Methodology Finalization &  & \checkmark &  &  &  \\
+Data Collection and Cleaning &  & \checkmark &  &  &  \\
+Model Training and Tuning &  &  & \checkmark & \checkmark &  \\
+Evaluation \& Optimization &  &  & \checkmark & \checkmark &  \\
+Report Writing \& Final Demo &  &  &  &  &  \\
+\hline
+\caption{Project Activity Timeline with Monthly Breakdown} \label{tab:schedule} \\
+\end{longtable}
+
+
+
+
+
+
+\section{Resources Required}
+Google Colab Pro (GPU), PyTorch, HuggingFace Transformers, DBpedia SPARQL endpoint, and annotated ReDial dataset.
+
+\section{References}
+\begin{itemize}
+    \item Chen et al., KBRD: Knowledge-Aware Recommendation for Dialog Systems, EMNLP 2020.
+    \item Zhou et al., TG-ReDial: A Topic-Guided Conversational Recommender, ACL 2021.
+\end{itemize}
+
+\newpage
+\section{Guidelines for Document Formatting}
+\subsection{Headings}
+\begin{itemize}
+    \item Section Headings: Bold, 14pt, Numbered
+    \item Sub-Section Headings: Bold, 12pt, Numbered
+    \item Sub-Sub-Section Headings: Italic, 11pt
+\end{itemize}
+
+\subsection{Tables}
+Tables must include a caption above and be centered.
+
+\subsection{Images}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{example-image}
+    \caption{Sample Architecture Diagram}
+\end{figure}
+
+\subsection{Text Formatting}
+Use Times New Roman, 12pt. Line spacing: 1.5. Justify all text.
+
+\subsection{References}
+Use IEEE or APA citation style.
+
+\end{document}
